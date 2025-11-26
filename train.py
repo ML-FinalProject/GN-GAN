@@ -1,14 +1,32 @@
 import os
 import json
 import math
-
 import torch
 import torch.optim as optim
 from absl import flags, app
 from torchvision import transforms
 from torchvision.utils import make_grid, save_image
+from PIL import Image as _PILImage
+import PIL.Image as Image
+if not hasattr(Image, "ANTIALIAS"):
+    # Pillow >=10: use Resampling.LANCZOS as the old ANTIALIAS
+    if hasattr(_PILImage, "Resampling"):
+        Image.ANTIALIAS = _PILImage.Resampling.LANCZOS
+    elif hasattr(Image, "LANCZOS"):
+        Image.ANTIALIAS = Image.LANCZOS
+
 from tensorboardX import SummaryWriter
 from tqdm import trange
+import sys
+import types
+try:
+    from torchvision.models.utils import load_state_dict_from_url  # old API
+except ImportError:
+    from torch.hub import load_state_dict_from_url
+    utils_mod = types.ModuleType("torchvision.models.utils")
+    utils_mod.load_state_dict_from_url = load_state_dict_from_url
+    sys.modules["torchvision.models.utils"] = utils_mod
+
 from pytorch_gan_metrics import get_inception_score_and_fid
 
 from datasets import get_dataset
@@ -41,7 +59,7 @@ loss_fns = {
 }
 
 
-datasets = ['cifar10.32', 'stl10.48']
+datasets = ['cifar10.32', 'stl10.48' ]
 
 
 FLAGS = flags.FLAGS

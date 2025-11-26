@@ -63,7 +63,7 @@ def get_dataset(name, in_memory=True):
             './data', split='unlabeled', download=True, transform=transform)
     if name == 'celebahq':
         dataset = LMDBDataset(
-            f'./data/celebahq/{img_size}', transform=transform)
+            f'./data/celeba_hq_256', transform=transform)
     if name == 'lsun_church':
         dataset = datasets.LSUNClass(
             './data/lsun/church/', transform, (lambda x: 0))
