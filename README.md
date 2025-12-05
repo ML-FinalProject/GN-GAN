@@ -16,7 +16,7 @@ Our objective is to analyze the interaction between various optimization algorit
   - Implemented and tested **conditional image generation**, including generating new images of the *airplane* class from CIFAR-10.
   - Log **Inception Score (IS)** and **FID** for each optimizer setting for analysis.
   
-## 1.2 Sreehitha Kosignati's contribution:
+## 1.2 Sreehitha Kosiganti's contribution:
   - Add support for multiple optimizers in `train_hypothesis.py`:
   - **Adam** (baseline)
   - **SGD + EMA** (Exponential Moving Averages)
