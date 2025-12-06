@@ -23,7 +23,7 @@ Our objective is to analyze the interaction between various optimization algorit
   - **SGD + EMA + Dynamic Learning Rate (DLR)**
   - Log **Inception Score (IS)** and **FID** for each optimizer setting for later analysis and visualization.
   - Evaluate models on **CIFAR-10 test statistics** using `pytorch_gan_metrics`.
-  - The test code is hypothesis_test.ipynb avai
+  - The test code is available in **hypothesis_test.ipynb** file
 
 All experiments in this project are performed **only on CIFAR-10**.
 
@@ -32,7 +32,7 @@ All experiments in this project are performed **only on CIFAR-10**.
 
 ### 2.1. Software Versions
 
-- Python 3.8.9
+- Python 3.8
 - PyTorch (CUDA-enabled, e.g. 1.10+)
 - torchvision
 - tensorboardX
@@ -44,12 +44,16 @@ All experiments in this project are performed **only on CIFAR-10**.
 1. Create and activate a virtual environment (optional but recommended):
 
    ```bash
-   conda create -n gngan python=3.8.9
+   conda create -n gngan python=3.8
    conda activate gngan
+   (or)
+   python3.8 -m venv .venv
+   .\.venv\Scripts\activate.bat
+   
 
 2. Install the dependencies using the below commands
    ```bash
-   pip install -U pip setuptools
+   python -m pip install --upgrade pip wheel setuptools
    pip install -r requirements.txt
 3.For FID computation, we use the precomputed CIFAR-10 statistics:(used in my_test.ipynb)
   ```bash
