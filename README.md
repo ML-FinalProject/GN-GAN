@@ -56,6 +56,11 @@ All experiments in this project are performed **only on CIFAR-10**.
    python -m pip install --upgrade pip wheel setuptools
    pip install -r requirements.txt
 3.For FID computation, we use the precomputed CIFAR-10 statistics:(used in my_test.ipynb)
+  - Pre-calculated statistics for FID can be downloaded from below link:
+  - **stats:** [Click here](https://drive.google.com/drive/folders/1UBdzl6GtNMwNQ5U-4ESlIer43tNjiGJC)
+  - cifar10.train.npz - Training set of CIFAR10
+  - cifar10.test.npz - Testing set of CIFAR10
+
   ```bash
     ./stats/cifar10.test.npz
 
