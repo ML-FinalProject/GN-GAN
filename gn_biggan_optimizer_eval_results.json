@@ -1,0 +1,30 @@
+{
+  "stats_path": "./stats/cifar10.test.npz",
+  "num_images": 50000,
+  "batch_size": 128,
+  "z_dim": 128,
+  "n_classes": 10,
+  "results": [
+    {
+      "name": "adam_seed0",
+      "ckpt_path": "logs/GN-BigGAN_CIFAR10_seed0/best_model.pt",
+      "IS": 9.222497070209064,
+      "IS_std": 0.14000107564646516,
+      "FID": 9.056285230325557
+    },
+    {
+      "name": "sgd_ema",
+      "ckpt_path": "logs/GN-BigGAN_CIFAR10_sgdema/best_model.pt",
+      "IS": 7.637007364112629,
+      "IS_std": 0.09097219096435186,
+      "FID": 21.462315274120158
+    },
+    {
+      "name": "sgd_ema_dlr",
+      "ckpt_path": "logs/GN-BigGAN_CIFAR10_sgdema_dlr/best_model.pt",
+      "IS": 7.334885145504242,
+      "IS_std": 0.07387333540569169,
+      "FID": 24.83628221561196
+    }
+  ]
+}
